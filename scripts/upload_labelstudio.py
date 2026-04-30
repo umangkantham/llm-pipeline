@@ -1,8 +1,8 @@
 import json
 import requests
 
-USERNAME = "umang@kantham.ai"
-PASSWORD = "Ram@2026"
+USERNAME = "xxx"
+PASSWORD = "xxx"
 
 PROJECT_ID = 1   # ⚠️ make sure this is correct
 INPUT = "data/processed/cleaned.json"
