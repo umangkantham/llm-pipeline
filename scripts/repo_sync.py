@@ -1,7 +1,7 @@
 import os
 from git import Repo
 
-REPO_URL = "https://github.com/pytest-dev/pytest.git"
+REPO_URL = "https://github.com/Significant-Gravitas/AutoGPT"
 CLONE_DIR = "data/raw/repo"
 
 def main():
