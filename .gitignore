@@ -5,3 +5,9 @@ __pycache__/
 .env
 data/
 .dvc/
+auto.json
+train.json
+final_train.json
+labelstudio_export.json
+project_id.txt
+.vscode/

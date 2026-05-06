@@ -1,4 +1,5 @@
 import subprocess
+import sys
 
 def run(step, cmd):
     print(f"\n🚀 {step}")
@@ -8,15 +9,16 @@ def run(step, cmd):
         raise Exception(f"❌ Failed at {step}")
 
 def main():
-    run("Repo Sync", "python scripts/repo_sync.py")
-    run("Extract Functions", "python scripts/extract_functions.py")
-    run("Clean Data", "python scripts/clean_data.py")
-    run("Build Dataset", "python scripts/build_dataset.py")
+    py = f"\"{sys.executable}\""
+    run("Repo Sync", f"{py} scripts/repo_sync.py")
+    run("Extract Functions", f"{py} scripts/extract_functions.py")
+    run("Clean Data", f"{py} scripts/clean_data.py")
+    run("Build Dataset", f"{py} scripts/build_dataset.py")
 
     # 🔥 DVC versioning step
-    run("DVC Track", "dvc add data/processed/instruct_v1")
+    run("DVC Track", f"{py} -m dvc add data/processed/instruct_v1")
 
-    run("Upload to Label Studio", "python scripts/upload_labelstudio.py")
+    run("Upload to Label Studio", f"{py} scripts/upload_labelstudio.py")
 
     print("\n✅ FULL PIPELINE COMPLETE")
 
